@@ -18,7 +18,7 @@
 
     <style>
         body{
-            padding: 0 !important;
+            padding: 20 12 !important;
             margin: 0 !important;
         }
         th{
@@ -27,6 +27,50 @@
         }
         nav{
             background-color: rgba(36,48,62,255) !important;
+        }
+        .butn{
+            background-color: rgba(255,34,29,0.8);
+            border: 1px solid rgb(255,210,69);
+            border-radius: 0px;
+            color: #fff;
+            margin: 10px;
+            padding: 12px;
+            font-family: Regular, sans-serif;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .butn:hover,.butn:active, .butn::after{
+            background-color: rgba(255,34,29,0.5);
+        }
+        table{
+            overflow-x: auto;
+            margin-top: 12px;
+        }
+        table tbody tr td:nth-child(even){
+            text-align: right;
+        }
+        table tbody tr:nth-child(even) {
+            background-color: #949aa4;
+        }
+
+        @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px)  {
+            /* Force table to not be like tables anymore */
+            table, thead, tbody, th, tr { 
+                display: block; 
+            }
+            
+            tr { border: 1px solid #ccc; }
+            
+            td:before { 
+                /* Now like a table header */
+                position: absolute;
+                /* Top/left values mimic padding */
+                top: 6px;
+                left: 6px;
+                width: 45%; 
+                padding-right: 10px; 
+                white-space: nowrap;
+            }
         }
     </style>
 </head>
@@ -40,8 +84,23 @@
         </div>
     </nav>
 
-    <main style="margin-top: 75px;">
-        <table class="non_veg_biryani" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
+    <main style="margin-top: 80px;">
+        <div class="sort_menu" style="text-align: center; gap: 1.5rem;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <button id="all_btn" type="button" class="butn">All</button>
+                        <button id="dinner_btn" type="button" class="butn">Dinner</button>
+                        <button id="break_btn" type="button" class="butn">Breakfast</button>
+                        <button id="lunch_btn" type="button" class="butn">Lunch</button>
+                        <button id="snack_btn" type="button" class="butn">Snacks</button>
+                        <button id="drinks_btn" type="button" class="butn">Drinks</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <table class="main snack non_veg_biryani" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
             <thead>
                 <tr>
                     <th style="color: rgb(255,210,69); font-size: 32px;" colspan="2">NON VEG BIRYANI</th>
@@ -115,7 +174,7 @@
             </tbody>
         </table>
 
-        <table class="veg_biryani" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
+        <table class="main snack veg_biryani" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
             <thead>
                 <tr>
                     <th style="color: rgb(255,210,69); font-size: 32px;" colspan="2">VEG BIRYANI</th>
@@ -149,7 +208,7 @@
             </tbody>
         </table>
     
-        <table class="corma" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
+        <table class="main snack corma" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
             <thead>
                 <tr>
                     <th style="color: rgb(255,210,69); font-size: 32px;" colspan="2">CORMA</th>
@@ -171,7 +230,7 @@
             </tbody>
         </table>
     
-        <table class="veg_curry" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
+        <table class="main veg_curry" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
             <thead>
                 <tr>
                     <th style="color: rgb(255,210,69); font-size: 32px;" colspan="2">VEG CURRY</th>
@@ -205,7 +264,7 @@
             </tbody>
         </table>
     
-        <table class="non_veg_curry" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
+        <table class="main non_veg_curry" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
             <thead>
                 <tr>
                     <th style="color: rgb(255,210,69); font-size: 32px;" colspan="2">NON VEG CURRY</th>
@@ -239,7 +298,7 @@
             </tbody>
         </table>
     
-        <table class="alacart" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
+        <table class="snack breakfast alacart" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
             <thead>
                 <tr>
                     <th style="color: rgb(255,210,69); font-size: 32px;" colspan="2">A LA CART</th>
@@ -285,7 +344,7 @@
             </tbody>
         </table>
     
-        <table class="friedrice" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
+        <table class="main snack friedrice" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
             <thead>
                 <tr>
                     <th style="color: rgb(255,210,69); font-size: 32px;" colspan="2">FRIED RICE</th>
@@ -311,7 +370,7 @@
             </tbody>
         </table>
     
-        <table class="sandwich" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
+        <table class="snack breakfast sandwich" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
             <thead>
                 <tr>
                     <th style="color: rgb(255,210,69); font-size: 32px;" colspan="2">SANDWICH</th>
@@ -337,7 +396,7 @@
             </tbody>
         </table>
     
-        <table class="burger" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
+        <table class="snack burger" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
             <thead>
                 <tr>
                     <th style="color: rgb(255,210,69); font-size: 32px;" colspan="2">BURGER</th>
@@ -355,7 +414,7 @@
             </tbody>
         </table>
         
-        <table class="starter" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
+        <table class="starters starter" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
             <thead>
                 <tr>
                     <th style="color: rgb(255,210,69); font-size: 32px;" colspan="2">SNACKS & STARTER (VEG.)</th>
@@ -409,7 +468,7 @@
             </tbody>
         </table>
     
-        <table class="pakauda" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
+        <table class="snack pakauda" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
             <thead>
                 <tr>
                     <th style="color: rgb(255,210,69); font-size: 32px;" colspan="2">PAKAUDA</th>
@@ -431,7 +490,7 @@
             </tbody>
         </table>
     
-        <table class="khaja" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
+        <table class="snack khaja" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
             <thead>
                 <tr>
                     <th style="color: rgb(255,210,69); font-size: 32px;" colspan="2">KHAJA SET</th>
@@ -453,7 +512,7 @@
             </tbody>
         </table>
     
-        <table class="sekuwa" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
+        <table class="snack sekuwa" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
             <thead>
                 <tr>
                     <th style="color: rgb(255,210,69); font-size: 32px;" colspan="2">SEKUWA</th>
@@ -471,7 +530,7 @@
             </tbody>
         </table>
     
-        <table class="tawa" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
+        <table class="main tawa" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
             <thead>
                 <tr>
                     <th style="color: rgb(255,210,69); font-size: 32px;" colspan="2">TAWA</th>
@@ -505,7 +564,7 @@
             </tbody>
         </table>
     
-        <table class="salad" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
+        <table class="starters breakfast salad" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
             <thead>
                 <tr>
                     <th style="color: rgb(255,210,69); font-size: 32px;" colspan="2">SALAD</th>
@@ -523,7 +582,7 @@
             </tbody>
         </table>
     
-        <table class="non_veg" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
+        <table class="main snack non_veg" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
             <thead>
                 <tr>
                     <th style="color: rgb(255,210,69); font-size: 32px;" colspan="2">NON VEG APPETIZER</th>
@@ -569,7 +628,7 @@
             </tbody>
         </table>
     
-        <table class="naanroti" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
+        <table class="main naanroti" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
             <thead>
                 <tr>
                     <th style="color: rgb(255,210,69); font-size: 32px;" colspan="2">NAAN & ROTI</th>
@@ -619,7 +678,7 @@
             </tbody>
         </table>
     
-        <table class="momo" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
+        <table class="snack momo" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
             <thead>
                 <tr>
                     <th style="color: rgb(255,210,69); font-size: 32px;" colspan="2">MOMO</th>
@@ -654,7 +713,7 @@
             </tbody>
         </table>
     
-        <table class="tandoori" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
+        <table class="snack tandoori" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
             <thead>
                 <tr>
                     <th style="color: rgb(255,210,69); font-size: 32px;" colspan="2">TANDOORI</th>
@@ -684,7 +743,7 @@
             </tbody>
         </table>
     
-        <table class="chowmein" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
+        <table class="snack chowmein" style="color: #fff; margin-left: auto; margin-right: auto; align-items: center;">
             <thead>
                 <tr>
                     <th style="color: rgb(255,210,69); font-size: 32px;" colspan="2">CHOWMEIN</th>
@@ -937,4 +996,49 @@
         </table>
     </main>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $('#all_btn').click(function(){
+        $('.main').show();
+        $('.breakfast').show();
+        $('.starters').show();
+        $('.drink').show();
+        $('.snack').show();
+    });
+    $('#dinner_btn').click(function(){
+        $('.breakfast').hide();
+        $('.starters').hide();
+        $('.drink').hide();
+        $('.snack').hide();
+        $('.main').show();
+    });
+    $('#break_btn').click(function(){
+        $('.main').hide();
+        $('.starters').hide();
+        $('.drink').hide();
+        $('.snack').hide();
+        $('.breakfast').show();
+    });
+    $('#lunch_btn').click(function(){
+        $('.breakfast').hide();
+        $('.starters').hide();
+        $('.drink').hide();
+        $('.snack').hide();
+        $('.main').show();
+    });
+    $('#snack_btn').click(function(){
+        $('.main').hide();
+        $('.breakfast').hide();
+        $('.drink').hide();
+        $('.snack').show();
+        $('.starters').show();
+    });
+    $('#drinks_btn').click(function(){
+        $('.main').hide();
+        $('.breakfast').hide();
+        $('.starters').hide();
+        $('.snack').hide();
+        $('.drink').show();
+    });
+</script>
 </html>
